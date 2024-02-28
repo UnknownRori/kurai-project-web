@@ -1,9 +1,11 @@
+import { Navbar } from "@/shared/Navbar";
+
 function App() {
-  return (
-    <>
-      <div>Hello World!</div>
-    </>
-  )
+    return (
+        <div className='h-screen bg-gray-800'>
+            <Navbar />
+        </div>
+    );
 }
 
-export default App
+export default App;
