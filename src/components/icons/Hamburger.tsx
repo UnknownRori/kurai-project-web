@@ -1,9 +1,14 @@
-export function HamburgerIcon() {
+type HamburgerProps = {
+    state: boolean,
+    onClick: () => void;
+}
+
+export function HamburgerIcon(props: HamburgerProps) {
     return (
-        <button className="flex flex-col justify-center items-center gap-[5px]">
-            <span className="w-10 rounded-full bg-gray-200 py-[3px] duration-500"></span>
-            <span className="w-10 rounded-full bg-gray-200 py-[3px] duration-500"></span>
-            <span className="w-10 rounded-full bg-gray-200 py-[3px] duration-500"></span>
+        <button onClick={() => props.onClick()} className="flex flex-col gap-[5px] w-12">
+            <span className={`p-[3px] duration-500 bg-white rounded-full ${props.state ? "translate-y-[12px] -rotate-[45deg]" : ""}`}></span>
+            <span className={`p-[3px] duration-500 bg-white rounded-full ${props.state ? "translate-y-[1px] rotate-[45deg]" : ""}`}></span>
+            <span className={`p-[3px] duration-500 bg-white rounded-full ${props.state ? "-translate-y-[9px] rotate-[45deg]" : ""}`}></span>
         </button>
     );
 }
