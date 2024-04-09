@@ -1,11 +1,13 @@
-import { Navbar } from "@/shared/Navbar";
-import Mansion from "./components/models/Mansion";
+import {
+  RouterProvider,
+} from "react-router-dom";
+
+import router from "./router/router";
 
 function App() {
     return (
         <div className='h-screen bg-gray-800'>
-            <Navbar />
-            <Mansion />
+            <RouterProvider router={router} />
         </div>
     );
 }

@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import { HamburgerIcon } from "@/components/icons/Hamburger";
 import useToggle from "@/composable/useToggle";
 
@@ -15,16 +17,16 @@ export function Navbar() {
                 justify-center items-center text-white transition-all duration-500 bg-gray-900`}>
                 <ul className="flex gap-4 md:flex-row sm:flex-col">
                     <li>
-                        <a href="#" className="font-bold">Home</a>
+                        <Link to='/' className="font-bold">Home</Link>
                     </li>
                     <li>
-                        <a href="#" className="font-semibold">News</a>
+                        <Link to='/news' className="font-semibold">News</Link>
                     </li>
                     <li>
-                        <a href="#" className="font-semibold">Gallery</a>
+                        <Link to='/gallery' className="font-semibold">Gallery</Link>
                     </li>
                     <li>
-                        <a href="#" className="font-semibold">Download</a>
+                        <Link to='/download' className="font-semibold">Download</Link>
                     </li>
                     <li>
                         {/* TODO : Make this things dropdown */}
