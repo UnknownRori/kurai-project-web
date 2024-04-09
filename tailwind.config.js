@@ -1,3 +1,5 @@
+import { fontFamily } from "tailwindcss/defaultTheme";
+
 /** @type {import('tailwindcss').Config} */
 export default {
     content: [
@@ -6,6 +8,9 @@ export default {
     ],
     theme: {
         extend: {
+            fontFamily: {
+                sans: ["Poppins", ...fontFamily.sans],
+            },
             colors: {
                 'text': {
                     50: '#f2f2f2',
