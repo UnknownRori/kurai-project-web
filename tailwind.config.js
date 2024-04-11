@@ -89,7 +89,7 @@ export default {
             },
             boxShadow: {
                 'neon-sm': '0px 0px 8px 0px rgba(151, 151, 151, 0.2)',
-                'neon-md': '0px 0px 12px 0px rgba(151, 151, 151, 0.4)',
+                'neon-md': '0px 0px 12px 1px rgba(151, 151, 151, 0.8)',
             }
         },
     },

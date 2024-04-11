@@ -28,7 +28,7 @@ function Link(props: LinkProps) {
     );
 }
 
-export function Navbar() {
+export default function Navbar() {
     const [hamburgerState, toggleHamburger] = useToggle();
 
     return (
