@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import Layout from "@/shared/Layout";
 
 import contributors from "@/data/contributors";
@@ -26,7 +27,7 @@ export type ContributorProfileProps = {
 function ContributorProfile(props: ContributorProfileProps) {
     // TODO : Added hover effect!
     return (
-        <img src={props.img} alt={props.name} className="w-24 h-24 rounded-full object-cover" />
+        <img src={props.img} alt={props.name} className="w-24 h-24 rounded-full object-cover shadow-neon-md" />
     );
 }
 
@@ -39,28 +40,39 @@ export default function Home() {
                     <h1 className="text-2xl text-center" style={{ textShadow: '0px 2px 12px white' }}>
                         An open source fan-game set in world of Touhou Project
                     </h1>
-                    <button className="flex gap-4 justify-center items-center py-2 px-4 rounded-lg bg-white 
+                    <NavLink to="/download" className="flex gap-4 justify-center items-center py-2 px-4 rounded-lg bg-white 
                     font-bold shadow-neon-sm hover:shadow-neon-md shadow-white duration-500 text-black hover:-translate-y-2">
                         Download
                         <svg className="h-8 w-8 text-primary-950" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />  <polyline points="7 10 12 15 17 10" />  <line x1="12" y1="15" x2="12" y2="3" /></svg>
-                    </button>
+                    </NavLink>
                 </header>
-                <main className="flex flex-col gap-8">
+                <main className="flex flex-col gap-8 mb-12">
                     <section className="flex gap-4 mx-8">
                         <div className="flex flex-col gap-2 w-full">
-                            <h1 className="text-4xl font-bold">Introduction</h1>
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore nostrum iusto optio tenetur accusamus excepturi exercitationem est consectetur numquam voluptatem sint doloribus, officiis quia provident nulla temporibus quae omnis impedit.
+                            <h1 className="text-4xl font-bold" style={{ textShadow: 'gray 0px 2px 12px' }}>Introduction</h1>
+                            <p className="text-justify">
+                                Kurai Project is an open source fan-game set in world of Touhou Project.
+                                It is top-down vertical-scrolling curtain of fire shooting game (STG) also known as "Bullet hell" or "Danmaku".
+                                STGs are fast-paced games focused around pattern recognition and mastery through practice.
+                            </p>
+
+                            <p className="text-justify">
+                                Kurai Project is somewhat portable, and it's written in Rust,
+                                the portability comes from macroquad crate for handling file and rendering,
+                                it support OpenGL, Metal, GLES rendering and also WebGL for browser such as Firefox and Chromium based browser,
+                                it can be compiled for number of operating system.
+                            </p>
                         </div>
                         <div className="w-full">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod adipisci maiores voluptate minus quos modi, doloribus quasi unde facilis! Autem optio aliquid quidem blanditiis eaque in quia commodi, asperiores officia.
+
                         </div>
                     </section>
 
                     <section className="flex flex-col gap-4 mx-8">
                         <header>
-                            <h2 className="text-2xl font-bold text-center">Feature</h2>
+                            <h2 className="text-2xl font-bold text-center" style={{ textShadow: 'gray 0px 0px 8px' }}>Feature</h2>
                         </header>
-                        <main className="flex gap-4 w-full">
+                        <main className="flex md:flex-row sm:flex-col  gap-4 w-full">
                             {
                                 features.map((feature) => <FeatureCard title={feature.title} content={feature.content} />)
                             }
@@ -68,13 +80,23 @@ export default function Home() {
                     </section>
 
                     <section className="flex flex-col gap-2 sm:mx-4 lg:mx-48">
-                        <h2 className="text-2xl">About Touhou Project</h2>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea commodi voluptatem nisi nostrum velit, officiis officia a distinctio voluptates adipisci dolor cupiditate dolores reprehenderit possimus facere, provident doloribus quo enim.
+                        <h2 className="text-2xl font-bold" style={{ textShadow: 'gray 0px 0px 8px' }}>About Touhou Project</h2>
+                        <p>
+                            Touhou Project is an indie game series (also known as "doujin" in Japanese) known for its ensemble cast of characters and memorable soundtracks. 
+                            It is produced by and large by a single artist known as ZUN, 
+                            and has a permissive license which allows for indie derivative works such as Kurai Project to legally exist.
+                        </p>
+
+                        <p>
+                            Kurai Project is not a "clone" of Touhou Project, 
+                            and tells an original story with its own music, art, gameplay mechanics, and codebase. 
+                            While some familiarity with Touhou is helpful, the gameplay can be enjoyed on its own without prior knowledge of the series.
+                        </p>
                     </section>
 
                     <section className="flex flex-col gap-4 sm:mx-4 lg:mx-48">
                         <header>
-                            <h2 className="text-2xl font-bold text-center">Contributor</h2>
+                            <h2 className="text-2xl font-bold text-center" style={{ textShadow: 'gray 0px 0px 8px' }}>Contributor</h2>
                         </header>
                         <main className="flex gap-4 justify-center items-center">
                             {contributors.map((contributor) => <ContributorProfile img={contributor.img} name={contributor.name} />)}
