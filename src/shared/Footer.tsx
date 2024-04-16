@@ -9,7 +9,6 @@ type LinkProps = {
 function Link(props: LinkProps) {
     return (
         <NavLink to={props.to} className={({ isActive }) => {
-            console.log(isActive);
             return (isActive ? "text-white" : "text-secondary-500");
         }}>
             {props.children}
