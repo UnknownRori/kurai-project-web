@@ -48,7 +48,7 @@ export default function Home() {
                     </NavLink>
                 </header>
                 <main className="flex flex-col gap-8 mb-12">
-                    <section className="flex gap-4 mx-8">
+                    <section className="flex sm:flex-col lg:flex-row gap-4 lg:mx-8">
                         <div className="flex flex-col gap-2 w-full">
                             <h1 className="text-4xl font-bold" style={{ textShadow: 'gray 0px 2px 12px' }}>Introduction</h1>
                             <p className="text-justify">
@@ -73,7 +73,7 @@ export default function Home() {
                         <header>
                             <h2 className="text-2xl font-bold text-center" style={{ textShadow: 'gray 0px 0px 8px' }}>Feature</h2>
                         </header>
-                        <main className="flex md:flex-row sm:flex-col  gap-4 w-full">
+                        <main className="flex lg:flex-row sm:flex-col  gap-4 w-full">
                             {
                                 features.map((feature) => <FeatureCard title={feature.title} content={feature.content} />)
                             }

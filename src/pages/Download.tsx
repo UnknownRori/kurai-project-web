@@ -67,7 +67,7 @@ export default function Download() {
 
                 <div className="w-full my-8 border-[0.25px] border-secondary-500"></div>
 
-                <div className="flex gap-4 w-full ">
+                <div className="flex sm:flex-col lg:flex-row gap-4 w-full">
                     <div className="flex flex-col gap-2 w-full">
                         <h3 className="text-lg">All Release</h3>
                     </div>

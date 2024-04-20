@@ -25,7 +25,7 @@ function App() {
     }, []);
 
     return (
-        <div className='min-h-screen bg-black grid grid-rows-[auto_1fr_auto]'>
+        <div className='min-h-screen min-w-[100vw] bg-black grid grid-rows-[auto_1fr_auto]'>
             <RouterProvider router={router} />
 
             <ToastContainer />

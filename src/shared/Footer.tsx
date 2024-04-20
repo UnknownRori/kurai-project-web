@@ -18,7 +18,7 @@ function Link(props: LinkProps) {
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col justify-center items-center gap-2 bg-[#121212] p-4">
+        <footer className="flex flex-col justify-center items-center min-w-[100vw] gap-2 bg-[#121212] p-4">
             <header className="flex flex-col gap-2 justify-center items-center text-white">
                 <img src={Logo} alt="kurai-project" className="w-48" />
                 <h1 className="text-4xl">Kurai Project</h1>
