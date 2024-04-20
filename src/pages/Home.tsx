@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import Layout from "@/shared/Layout";
+import WindowImage from "@/components/WindowImage";
 
 import contributors from "@/data/contributors";
 import features from "@/data/features";
@@ -63,8 +64,8 @@ export default function Home() {
                                 it can be compiled for number of operating system.
                             </p>
                         </div>
-                        <div className="w-full">
-
+                        <div className="flex justify-center items-center w-full px-8">
+                            <WindowImage src="" title="Kurai Project"></WindowImage>
                         </div>
                     </section>
 
