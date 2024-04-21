@@ -4,7 +4,7 @@ import { PropsWithChildren, useEffect, useRef, useState } from "react";
 export default function LineFrame(props: PropsWithChildren) {
     const [percentage, setPercentage] = useState(0);
     const scrollPositionY = useScroll();
-    const contentRef = useRef<null | HTMLElement>(null);
+    const contentRef = useRef<null | HTMLDivElement>(null);
 
     useEffect(() => {
         if (contentRef.current) {
