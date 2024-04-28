@@ -12,7 +12,16 @@ export default [
         recommended: "> 500Mb",
     },
     {
-        component: "GPU",
+        component: "Graphics",
+        minimum: [
+            "OpenGL 2.2", "GLES 2", "Metal", "WebGL 1"
+        ],
+        recommended: [
+            "OpenGL 3", "GLES 3"
+        ],
+    },
+    {
+        component: "VRAM",
         minimum: "1 Gb",
         recommended: "> 1 Gb",
     },

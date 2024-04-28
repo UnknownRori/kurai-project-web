@@ -4,21 +4,40 @@ import requirements from "@/data/requirements";
 
 export type RequirementsRows = {
     component: string,
-    minimum: string,
-    recommended: string,
+    minimum: string[] | string,
+    recommended: string[] | string,
 }
 
 function RequirementRow(props: RequirementsRows) {
+    let minimum;
+    let recomended;
+
+    if (typeof props.minimum == "string") {
+        minimum = (<p>{props.minimum}</p>);
+    } else {
+        minimum = (<ul className="flex flex-col gap-4 list-disc justify-start items-start">
+            {props.minimum.map((minimum) => (<li>{minimum}</li>))}
+        </ul>);
+    }
+
+    if (typeof props.recommended == "string") {
+        recomended = (<p>{props.recommended}</p>);
+    } else {
+        recomended = (<ul className="flex flex-col gap-4 list-disc justify-start items-start">
+            {props.recommended.map((recomended) => (<li>{recomended}</li>))}
+        </ul>);
+    }
+
     return (
         <tr className="border-b bg-gray-950 border-gray-900">
             <th scope="row" className="px-6 py-4 font-medium whitespace-nowrap text-white">
                 {props.component}
             </th>
             <td className="px-6 py-4">
-                {props.minimum}
+                {minimum}
             </td>
-            <td className="px-6 py-4">
-                {props.recommended}
+            <td className="px-6 py-4 flex">
+                {recomended}
             </td>
         </tr>
     );
